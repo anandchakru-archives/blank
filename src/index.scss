@@ -1,0 +1,32 @@
+/*
+  WARNING:
+  This file includes all the defaults, normally this file should NOT be modified.
+  Include the design styles in main.scss
+
+  xs < 576px wide
+  sm < 768px wide
+  md < 992px wide
+  lg < 1200px wide
+  xl > 1200px wide
+
+  The following ensures thumbnails are exported to /dist dir while building
+  There is no need to remove it.
+  
+*/
+
+$screensizes: xs sm md lg xl;
+
+@each $screensize in $screensizes {
+  .nesign-thumbnail-#{screensize} {
+    background-image: url('./assets/thumbnail-#{$screensize}.jpg');
+  }
+}
+
+html {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@import "./styles/main.scss";
