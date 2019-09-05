@@ -29,4 +29,8 @@ html {
   background-size: cover;
 }
 
-@import "./styles/main.scss";
+/* Enforce all external styles to be (auto) prefixed to `div.niview-main` */
+/* This ensures the styles are applied only to the invite, not to the whole page */
+div.niview-main {
+  @import "./styles/main.scss";
+}
