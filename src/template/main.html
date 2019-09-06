@@ -1,65 +1,34 @@
-<!-- Custom template goes here -->
+<pre>
 {{#if invite}}
-<div class="invite-container">
-  {{#if guest}}
-  <section class="guest">
-    <div class="guest">
-      <span class="guest">{{guest.name}}</span>
-    </div>
-  </section>
-  {{/if}}
-  <section class="main">
-    <div class="title">{{invite.title}}</div>
-    <div class="short-msg">{{invite.shortMsg}}</div>
-    {{#if mainPhoto}}
-    <div class="main-img-container">
-      <img class="main-img" src="{{mainPhoto.url}}" alt="{{mainPhoto.title}}">
-      <div class="main-img-details">
-        <div class="main-img-title">{{mainPhoto.title}}</div>
-        <span class="main-img-description">{{mainPhoto.description}}</span>
-      </div>
-    </div>
-    {{/if}}
-    {{#if longMsg}}
-    <div class="long-msg">
-      {{{longMsg}}}
-    </div>
-    {{/if}}
-  </section>
-  <section class="details">
-    <div class="details-address">
-      <div class="details-address-title">Venue</div>
-      <div class="details-address-text">{{invite.addrText}}</div>
-    </div>
-    <div class="details-time">
-      <div class="details-time-from">
-        <div class="details-time-from-title">Starts</div>
-        <div class="details-time-from-text">{{invite.timeFromString}} ({{invite.timeFrom}})</div>
-      </div>
-      <!-- <div class="details-time-to">
-        <div class="details-time-to-title">Ends</div>
-        <div class="details-time-to-text">{{invite.timeToString}} ({{invite.timeTo}})</div>
-      </div> -->
-    </div>
-  </section>
-  <section class="slider">
-    {{#if sliderPhotos}}
-    {{#each sliderPhotos}}
-    <div class="slider-img-container">
-      <img class="slider-img" src="{{url}}" alt="{{title}}">
-      <div class="slider-img-details">
-        <div class="slider-img-title">{{title}}</div>
-        <span class="slider-img-description">{{description}}</span>
-      </div>
-    </div>
-    {{/each}}
-    {{/if}}
-  </section>
-  <section class="footer">
-    Lovely nerds handcrafted this invite @ <a href="http://nivite.jrvite.com" target="_blank"
-      rel="noopener noreferrer">Nivite.com</a>
-  </section>
-</div>
-{{else}}
-<h1>Oh no, we have an error loading the Invite.</h1>
+{{#if guest}}
+{{guest.name}}
 {{/if}}
+{{invite.title}}
+{{invite.shortMsg}}
+{{#if mainPhoto}}
+{{mainPhoto.url}}
+{{mainPhoto.title}}
+{{mainPhoto.description}}
+{{/if}}
+{{#if longMsg}}
+{{{longMsg}}}
+{{/if}}
+{{invite.addrText}}
+{{invite.timeFromString}} ({{invite.timeFrom}})
+{{invite.timeToString}} ({{invite.timeTo}})
+{{#if bgPhoto}}
+{{bgPhoto.url}}
+{{bgPhoto.title}}
+{{bgPhoto.description}}
+{{/if}}
+{{#if sliderPhotos}}
+{{#each sliderPhotos}}
+{{url}}
+{{title}}
+{{description}}
+{{/each}}
+{{/if}}
+{{else}}
+Oh no, we have an error loading the Invite
+{{/if}}
+</pre>
